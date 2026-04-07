@@ -1,0 +1,177 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── DARK THEME (default) — Slate + Emerald, maskulin ── */
+:root, [data-theme="dark"] {
+  --bg-primary:    #0f172a;
+  --bg-card:       #1e293b;
+  --bg-input:      #0f172a;
+  --bg-hover:      #334155;
+  --border:        #334155;
+  --border-focus:  #10b981;
+  --text-primary:  #f1f5f9;
+  --text-secondary:#94a3b8;
+  --text-muted:    #475569;
+  --accent:        #10b981;
+  --accent-hover:  #34d399;
+  --accent-light:  rgba(16,185,129,0.12);
+  --danger:        #f43f5e;
+  --danger-light:  rgba(244,63,94,0.12);
+  --income:        #10b981;
+  --income-light:  rgba(16,185,129,0.12);
+  --expense:       #f43f5e;
+  --expense-light: rgba(244,63,94,0.12);
+  --shadow:        0 4px 24px rgba(0,0,0,0.4);
+  --radius:        14px;
+}
+
+/* ── LIGHT THEME — Rose + Pink, feminin ── */
+[data-theme="light"] {
+  --bg-primary:    #fff1f5;
+  --bg-card:       #ffffff;
+  --bg-input:      #fdf2f8;
+  --bg-hover:      #fce7f3;
+  --border:        #fbcfe8;
+  --border-focus:  #ec4899;
+  --text-primary:  #3b0764;
+  --text-secondary:#7e22ce;
+  --text-muted:    #c084fc;
+  --accent:        #ec4899;
+  --accent-hover:  #db2777;
+  --accent-light:  rgba(236,72,153,0.10);
+  --danger:        #ef4444;
+  --danger-light:  rgba(239,68,68,0.10);
+  --income:        #8b5cf6;
+  --income-light:  rgba(139,92,246,0.10);
+  --expense:       #ec4899;
+  --expense-light: rgba(236,72,153,0.10);
+  --shadow:        0 4px 24px rgba(236,72,153,0.10);
+  --radius:        14px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s, color 0.3s;
+  min-height: 100vh;
+}
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.input {
+  width: 100%;
+  background: var(--bg-input);
+  border: 1.5px solid var(--border);
+  color: var(--text-primary);
+  border-radius: 10px;
+  padding: 10px 16px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.input:focus { border-color: var(--border-focus); }
+.input::placeholder { color: var(--text-muted); }
+
+.btn-primary {
+  width: 100%;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 11px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, opacity 0.2s;
+}
+.btn-primary:hover { background: var(--accent-hover); }
+.btn-primary:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.btn-google {
+  width: 100%;
+  background: var(--bg-card);
+  color: var(--text-primary);
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: background 0.2s;
+}
+.btn-google:hover { background: var(--bg-hover); }
+
+.label {
+  display: block;
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+.alert-error {
+  background: var(--danger-light);
+  border: 1px solid var(--danger);
+  color: var(--danger);
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 13px;
+  margin-bottom: 16px;
+}
+
+.alert-success {
+  background: var(--accent-light);
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 13px;
+  margin-bottom: 16px;
+}
+
+.theme-toggle {
+  background: var(--bg-hover);
+  border: 1.5px solid var(--border);
+  border-radius: 50px;
+  padding: 6px 14px;
+  cursor: pointer;
+  font-size: 13px;
+  color: var(--text-secondary);
+  font-weight: 500;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.theme-toggle:hover { border-color: var(--border-focus); color: var(--text-primary); }
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 18px 0;
+}
+.divider::before, .divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+.divider span { font-size: 12px; color: var(--text-muted); }
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-primary); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 99px; }
