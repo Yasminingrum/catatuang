@@ -223,4 +223,4 @@ Build ulang → drag `dist/` lagi ke halaman Deploys Netlify
 
 ---
 
-> Dibuat untuk tugas pengembangan aplikasi web — April 2026
+> Dibuat untuk tugas cloud computing — April 2026
